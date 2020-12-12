@@ -15,6 +15,25 @@ class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    if (!localStorage.getItem('phonebookContacts')) {
+      localStorage.setItem(
+        'phonebookContacts',
+        JSON.stringify(this.state.contacts),
+      );
+    }
+    this.setState({
+      contacts: JSON.parse(localStorage.getItem('phonebookContacts')),
+    });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem(
+      'phonebookContacts',
+      JSON.stringify(this.state.contacts),
+    );
+  }
+
   handleFilterChange = value => {
     this.setState({ filter: value });
   };
