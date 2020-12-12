@@ -1,0 +1,27 @@
+.list {
+  padding: 20px;
+  margin: 0;
+}
+.listItem {
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+.listItem:not(:last-child) {
+  margin-bottom: 10px;
+}
+.name {
+  margin-right: 20px;
+}
+.num {
+  font-weight: 500;
+  margin-right: auto;
+}
+.button {
+  background-color: rgb(255, 209, 197);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button:hover {
+  transform: scale(1.05);
+}
